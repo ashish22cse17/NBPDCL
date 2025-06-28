@@ -26,7 +26,7 @@ const CategoryStockPage = () => {
   useEffect(() => {
     const fetchCategoryData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/stocks/by-category");
+        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks/by-category");
         setCategories(res.data);
         setFiltered(res.data);
       } catch (error) {

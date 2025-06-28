@@ -25,7 +25,7 @@ const Inventory = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/stocks");
+        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
         setProducts(res.data);
       } catch (err) {
         console.error("Failed to fetch products:", err);
@@ -228,7 +228,7 @@ export default Inventory;
 // Helpers
 export const getInventoryCount = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/stocks");
+    const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
     return res.data.length;
   } catch (err) {
     console.error("Failed to fetch count:", err);
@@ -238,7 +238,7 @@ export const getInventoryCount = async () => {
 
 export const getLowStockCount = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/stocks");
+    const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
     return res.data.filter((item) => item.quantity < 25).length;
   } catch (err) {
     console.error("Failed to fetch low stock count:", err);
@@ -248,7 +248,7 @@ export const getLowStockCount = async () => {
 
 export const getTotalStockValue = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/stocks");
+    const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
     return res.data.reduce((sum, item) => sum + item.quantity * item.unitPrice, 0);
   } catch (err) {
     console.error("Failed to fetch stock value:", err);

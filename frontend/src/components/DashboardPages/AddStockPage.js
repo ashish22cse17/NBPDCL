@@ -40,7 +40,7 @@ const AddStockPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/stocks");
+      const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
       setProducts(res.data);
     } catch (err) {
       console.error("Failed to fetch products:", err);
@@ -78,7 +78,7 @@ const AddStockPage = () => {
 
   const handleAddStock = async () => {
     try {
-      await axios.post("http://localhost:5000/api/stocks/add", formData);
+      await axios.post("https://nbpdcl-sms.onrender.com/api/stocks/add", formData);
       setSuccessMsg("✅ Stock item added successfully!");
       resetForm();
       fetchProducts();
@@ -89,7 +89,7 @@ const AddStockPage = () => {
 
   const handleEditStock = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/stocks/${editId}`, formData);
+      await axios.put(`https://nbpdcl-sms.onrender.com/api/stocks/${editId}`, formData);
       setSuccessMsg("✅ Stock item updated successfully!");
       resetForm();
       fetchProducts();
@@ -123,7 +123,7 @@ const AddStockPage = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+      await axios.delete(`https://nbpdcl-sms.onrender.com/api/stocks/${id}`);
       fetchProducts();
       alert("Item deleted successfully.");
     } catch (err) {

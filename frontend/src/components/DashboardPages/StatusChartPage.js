@@ -34,7 +34,7 @@ const StatusChartPage = () => {
   const fetchStockStatus = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/stocks");
+      const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
       const stocks = res.data;
 
       let available = 0;
