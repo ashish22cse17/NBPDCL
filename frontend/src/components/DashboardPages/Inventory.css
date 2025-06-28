@@ -1,0 +1,212 @@
+.inventory-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.inventory-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Toolbar Structure */
+.inventory-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+}
+
+.toolbar-row-bottom {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Input & Button Styles */
+.inventory-search {
+  padding: 8px 12px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.inventory-select,
+.download-btn,
+.filter-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.inventory-select {
+  min-width: 140px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+}
+
+.download-btn {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background-color: #218838;
+}
+
+.filter-btn {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.filter-btn:hover {
+  background-color: #5bc0de;
+}
+
+/* Table Styles */
+.inventory-table-container {
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.inventory-table th {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Status Labels */
+.status {
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.status.available {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.low-stock {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.out-of-stock {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Action Buttons */
+.action-btn {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.action-btn.edit {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.action-btn.edit:hover {
+  background-color: #138496;
+}
+
+.action-btn.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.action-btn.delete:hover {
+  background-color: #c82333;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5bc0de;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-weight: bold;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .toolbar-row-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .toolbar-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .inventory-search,
+  .inventory-select,
+  .filter-btn,
+  .download-btn {
+    width: 100%;
+  }
+
+  .pagination-controls {
+    flex-direction: row;
+    gap: 8px;
+  }
+}

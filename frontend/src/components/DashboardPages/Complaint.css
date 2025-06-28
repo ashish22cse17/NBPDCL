@@ -1,0 +1,246 @@
+.complaint-form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mode-toggle button {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.mode-toggle button.active {
+  background-color: #5bc0de;
+  color: #fff;
+}
+
+.complaint-form,
+.track-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.complaint-form input,
+.complaint-form select,
+.complaint-form textarea,
+.track-controls select,
+.track-controls input {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.complaint-form button,
+.track-controls button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #5bc0de;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.complaint-form button:hover,
+.track-controls button:hover {
+  background-color: #007bff;
+}
+
+/* Complaint Cards */
+.complaints-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.complaint-card,
+.complaint-card.improved {
+  background-color: #ffffff;
+  border-left: 5px solid #2196f3;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.complaint-card.improved:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.complaint-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.complaint-card h4 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.complaint-card p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Status Tags */
+.status {
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background-color: #f0ad4e;
+}
+
+.status.resolved {
+  background-color: #5cb85c;
+}
+
+.status.rejected {
+  background-color: #d9534f;
+}
+
+/* Resolution Box */
+.resolution-box {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* File Upload */
+.file-upload-label {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Proof Box */
+.proof-box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proof-box a {
+  color: #1976d2;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.proof-img {
+  max-width: 100%;
+  max-height: 250px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Autocomplete */
+.autocomplete-container {
+  position: relative;
+}
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.no-suggestion {
+  padding: 8px;
+  font-style: italic;
+  color: #999;
+  text-align: center;
+}
+
+/* Track Section */
+.track-section {
+  margin-top: 2rem;
+ 
+}
+
+.track-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .complaint-form-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .mode-toggle {
+    flex-direction: column;
+  }
+
+  .mode-toggle button {
+    margin: 5px 0;
+  }
+
+  .complaint-card,
+  .complaint-card.improved {
+    padding: 12px 16px;
+  }
+
+  .complaint-header h3 {
+    font-size: 1rem;
+  }
+}

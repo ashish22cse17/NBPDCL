@@ -1,0 +1,189 @@
+/* src/components/LoginForm.css */
+.login-section {
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 170px;
+}
+
+.login-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #d8edf7;
+  border-radius: 4px;
+  padding: 20px;
+  background: #fff;
+}
+
+.box-header {
+  background-color: #d8edf7;
+  padding: 10px;
+  font-weight: bold;
+  margin: -20px -20px 20px -20px;
+  font-size: 16px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.forgot-link {
+  margin-bottom: 10px;
+}
+
+.forgot-link a {
+  font-size: 14px;
+  color: #2184d0;
+  text-decoration: none;
+}
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.captcha-row img {
+  height: 30px;
+  width: 50px;
+  border: 1px solid #ccc;
+  object-fit: contain;
+}
+
+.form-buttons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-buttons a {
+  font-size: 14px;
+  color: #2184d0;
+  text-decoration: none;
+}
+/* src/components/LoginForm.css */
+.login-section {
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+
+}
+
+.login-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #d8edf7;
+  border-radius: 4px;
+  padding: 25px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.box-header {
+  background-color: #d8edf7;
+  padding: 10px;
+  font-weight: bold;
+  color: #31708f;
+  margin: -25px -25px 20px -25px;
+  font-size: 16px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.forgot-link {
+  margin-bottom: 10px;
+ 
+}
+
+.forgot-link a {
+  font-size: 14px;
+  color: #2184d0;
+  text-decoration: none;
+}
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.captcha-row img {
+  height: 30px;
+  width: 50px;
+  border: 1px solid #ccc;
+  object-fit: contain;
+}
+
+.form-buttons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-buttons a {
+  font-size: 14px;
+  color: #2184d0;
+  text-decoration: none;
+}

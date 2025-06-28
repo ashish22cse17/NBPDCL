@@ -1,0 +1,152 @@
+/* Wrapper for full header */
+.header-wrapper {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Top Layer: Logos + Title */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.header-right {
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  gap: 16px; /* Add this line to control space between links */
+}
+.logo {
+  height: 65px;
+  width: auto;
+}
+
+/* Bottom Layer: Navigation */
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+  position: relative;
+}
+
+/* Left side: hamburger + role */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hamburger {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  background-color: #5bc0de;
+  padding: 0px 11px 4px;
+}
+
+.user-role {
+  font-weight: 600;
+  color: #5a5a5a;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Right side: nav links */
+.nav-links {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+.nav-links .logout {
+ 
+  color: red;
+ 
+}
+
+.nav-links a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Responsive: Mobile view */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 15px;
+  }
+
+  .logo {
+    height: 42px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-bottom: 5px;
+  }
+.nav-links {
+  display: flex;
+  gap: 0px;
+}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    z-index: 10;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .user-role {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+}
+

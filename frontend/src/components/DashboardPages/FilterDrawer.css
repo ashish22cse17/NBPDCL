@@ -1,0 +1,152 @@
+/* Base drawer styling */
+.drawer {
+  position: fixed;
+  background-color: white;
+  z-index: 1100; /* ensure it's above header */
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Desktop: Right drawer */
+@media (min-width: 769px) {
+  .drawer {
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100%;
+    transform: translateX(100%);
+    border-left: 1px solid #ccc;
+  }
+
+  .drawer.open {
+    transform: translateX(0);
+  }
+}
+
+/* Mobile: Bottom drawer */
+@media (max-width: 768px) {
+  .drawer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    transform: translateY(100%);
+    border-top: 1px solid #ccc;
+  }
+
+  .drawer.open {
+    transform: translateY(0);
+  }
+}
+
+/* Drawer header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f9fa;
+}
+
+.drawer-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.drawer-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Drawer body */
+.drawer-body {
+  padding: 16px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.drawer-body label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Unified input/select styles */
+.drawer-body input,
+.drawer-body select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* Quantity & price range inputs */
+.range-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.range-inputs input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Drawer footer buttons */
+.drawer-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-top: 1px solid #ccc;
+  background-color: #f8f9fa;
+}
+
+.drawer-footer button {
+  flex: 1;
+  margin: 0 6px;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Button styles */
+.drawer-footer button:first-child {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.drawer-footer button:last-child {
+  background-color: #5bc0de;
+  color: white;
+}
+
+/* Mobile adjustments */
+@media (max-width: 500px) {
+  .drawer-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .drawer-footer button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .range-inputs {
+    flex-direction: column;
+  }
+}

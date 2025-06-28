@@ -1,0 +1,100 @@
+.my-orders-container {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.my-orders-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2d2d2d;
+}
+
+.responsive-table {
+  overflow-x: auto;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  text-align: left;
+}
+
+.orders-table th {
+  background-color: #f4f7fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.item-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-row {
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.item-id {
+  font-size: 12px;
+  color: #777;
+}
+
+.item-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.item-qty {
+  font-size: 14px;
+  color: #444;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.delivered {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+@media (max-width: 768px) {
+  .orders-table th,
+  .orders-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .item-row {
+    font-size: 13px;
+  }
+}

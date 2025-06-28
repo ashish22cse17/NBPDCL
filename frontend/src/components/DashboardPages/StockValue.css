@@ -1,0 +1,151 @@
+.stock-value-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.stock-value-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.stock-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Uniform Controls */
+.stock-search,
+.stock-select,
+.download-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  box-sizing: border-box;
+}
+
+/* Specific Styling */
+.stock-search {
+  background-color: #fff;
+}
+
+.stock-select {
+  background-color: #f9f9f9;
+}
+
+.download-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background-color: #218838;
+}
+
+.total-value-box {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #28a745;
+}
+
+/* ✅ Table */
+.stock-value-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.stock-value-table th,
+.stock-value-table td {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.stock-value-table th {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* ✅ Pagination */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5bc0de;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-weight: bold;
+}
+
+/* Color-coded value cells */
+.value-cell.low-value {
+  color: #2c3e50;
+  background-color: #eef9f1;
+}
+
+.value-cell.medium-value {
+  color: #856404;
+  background-color: #fff3cd;
+}
+
+.value-cell.high-value {
+  color: #721c24;
+  
+  font-weight: bold;
+}
+
+/* ✅ Responsive Stack for Mobile */
+@media (max-width: 768px) {
+  .stock-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stock-search,
+  .stock-select,
+  .download-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .stock-value-table {
+    display: block;
+    overflow-x: auto;
+    font-size: 13px;
+  }
+}

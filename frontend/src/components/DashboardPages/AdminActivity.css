@@ -1,0 +1,65 @@
+.activity-container {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  background-color: #f9f9fc;
+  border-radius: 12px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+
+.activity-table th,
+.activity-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.activity-table th {
+  background-color: #f1f5f9;
+  color: #444;
+  font-weight: 600;
+}
+
+.activity-table tr:hover {
+  background-color: #f0f8ff;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.badge-accepted {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+}

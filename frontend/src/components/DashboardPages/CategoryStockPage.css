@@ -1,0 +1,79 @@
+.category-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.category-title {
+  font-size: 24px;
+  color: #2a3f5f;
+  margin-bottom: 20px;
+}
+
+.category-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.category-search {
+  padding: 10px;
+  font-size: 16px;
+  width: 50%;
+  min-width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.category-total {
+  font-size: 16px;
+  color: #444;
+  margin-top: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.category-table th,
+.category-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.category-table thead {
+  background-color: #f0f4ff;
+}
+
+.category-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.chart-section {
+  margin-top: 40px;
+}
+
+.chart-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2a3f5f;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  padding: 40px 0;
+  color: #777;
+}

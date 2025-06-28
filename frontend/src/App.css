@@ -1,0 +1,18 @@
+/* Ensure the page takes full height and pushes footer down */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* App wrapper takes full height */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This makes sure content takes all available vertical space */
+.content {
+  flex: 1;
+}

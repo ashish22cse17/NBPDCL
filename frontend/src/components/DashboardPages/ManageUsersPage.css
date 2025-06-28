@@ -1,0 +1,82 @@
+.manage-users-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.manage-users-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.users-table th {
+  background-color: #f4f6f8;
+  color: #333;
+  font-weight: 600;
+}
+
+.actions-column {
+  width: 180px;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn.view {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn.edit {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.no-users {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
