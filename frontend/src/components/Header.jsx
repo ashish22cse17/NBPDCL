@@ -71,8 +71,7 @@ function Header({ userType, setUserType }) {
                 ) : (
                   userDetails && (
                     <>
-                      <strong>{userDetails.fullName}</strong> (
-                      {userDetails.email})
+                      <strong>{userDetails.fullName}</strong>
                     </>
                   )
                 )}
