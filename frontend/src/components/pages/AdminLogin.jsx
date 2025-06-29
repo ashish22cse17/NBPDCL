@@ -41,7 +41,7 @@ function AdminLogin({ setUserType }) {
 
   try {
     const res = await axios.post(
-      "https://nbpdcl-sms.onrender.com/api/admin/adminLogin",
+      "http://localhost:5000/api/admin/adminLogin",
       {
         username: formData.username,
         password: formData.password,

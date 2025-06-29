@@ -1,0 +1,28 @@
+.support-card {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: #f7f9fb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  text-align: left;
+}
+
+.support-card h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #0b3d91;
+  text-align: center;
+}
+
+.support-info p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.support-info strong {
+  color: #0b3d91;
+}

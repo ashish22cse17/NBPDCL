@@ -9,7 +9,7 @@ const AdminActivity = () => {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const response = await axios.get("https://nbpdcl-sms.onrender.com/api/orders/logs");
+        const response = await axios.get("http://localhost:5000/api/orders/logs");
         const sortedLogs = response.data.sort(
           (a, b) => new Date(b.date) - new Date(a.date)
         );

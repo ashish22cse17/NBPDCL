@@ -9,7 +9,7 @@ const ManageUsersPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users");
+      const res = await axios.get("http://localhost:5000/api/users");
       setUsers(res.data);
     } catch (err) {
       console.error("Failed to fetch users:", err);
@@ -22,7 +22,7 @@ const ManageUsersPage = () => {
 
   const handleStatusChange = async (id, newStatus, designation) => {
     try {
-      const res = await axios.put(`https://nbpdcl-sms.onrender.com/api/users/${id}/status`, {
+      const res = await axios.put(`http://localhost:5000/api/users/${id}/status`, {
         status: newStatus,
         designation,
       });
@@ -148,7 +148,7 @@ const ManageUsersPage = () => {
                       onClick={async () => {
                         if (window.confirm("Delete this user?")) {
                           await axios.delete(
-                            `https://nbpdcl-sms.onrender.com/api/users/${user._id}`
+                            `http://localhost:5000/api/users/${user._id}`
                           );
                           setUsers((prev) =>
                             prev.filter((u) => u._id !== user._id)

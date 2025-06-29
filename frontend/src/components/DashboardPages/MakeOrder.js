@@ -14,7 +14,7 @@ const MakeOrder = ({ userType }) => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
+        const res = await axios.get("http://localhost:5000/api/users/me", {
           withCredentials: true,
         });
        
@@ -29,7 +29,7 @@ const MakeOrder = ({ userType }) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
+        const res = await axios.get("http://localhost:5000/api/stocks");
         setProducts(res.data);
         setFilteredProducts(res.data);
 
@@ -92,7 +92,7 @@ const MakeOrder = ({ userType }) => {
 
     try {
      
-      await axios.post("https://nbpdcl-sms.onrender.com/api/orders", payload, {
+      await axios.post("http://localhost:5000/api/orders", payload, {
         withCredentials: true,
       });
       alert("✅ Order placed successfully!");

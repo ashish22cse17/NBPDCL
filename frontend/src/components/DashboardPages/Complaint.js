@@ -33,7 +33,7 @@ function Complaint({ userType }) {
     const getUserDetails = async () => {
       if (userType === "user") {
         try {
-          const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
+          const res = await axios.get("http://localhost:5000/api/users/me", {
             withCredentials: true,
           });
           setUserDetails(res.data);
@@ -56,7 +56,7 @@ function Complaint({ userType }) {
     const delayDebounceFn = setTimeout(() => {
       if (searchTerm.length > 1) {
         axios
-          .get(`https://nbpdcl-sms.onrender.com/api/stocks/search?q=${searchTerm}`)
+          .get(`http://localhost:5000/api/stocks/search?q=${searchTerm}`)
           .then((res) => setSuggestions(res.data))
           .catch((err) => console.error(err));
       } else {
@@ -71,7 +71,7 @@ function Complaint({ userType }) {
     try {
       const dataToSend = { ...formData, userType };
 
-      await axios.post("https://nbpdcl-sms.onrender.com/api/complaints", dataToSend, {
+      await axios.post("http://localhost:5000/api/complaints", dataToSend, {
         withCredentials: true,
       });
 
@@ -99,7 +99,7 @@ function Complaint({ userType }) {
     if (!trackInput) return alert("Please enter the required field");
 
     try {
-      const res = await axios.get("https://nbpdcl-sms.onrender.com/api/complaints", {
+      const res = await axios.get("http://localhost:5000/api/complaints", {
         params:
           trackMode === "complaintId"
             ? { complaintId: trackInput }
@@ -290,7 +290,7 @@ function Complaint({ userType }) {
                     <div className="proof-box">
                       <strong>Proof:</strong>
                       <img
-                        src={`https://nbpdcl-sms.onrender.com${comp.proof}`}
+                        src={`http://localhost:5000${comp.proof}`}
                         alt="Proof"
                         className="proof-img"
                       />

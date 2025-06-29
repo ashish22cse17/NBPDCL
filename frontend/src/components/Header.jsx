@@ -12,7 +12,7 @@ function Header({ userType, setUserType }) {
     const fetchUserDetails = async () => {
       if (userType !== "guest") {
         try {
-          const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
+          const res = await axios.get("http://localhost:5000/api/users/me", {
             withCredentials: true,
           });
           setUserDetails(res.data);
@@ -27,7 +27,7 @@ function Header({ userType, setUserType }) {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "https://nbpdcl-sms.onrender.com/api/users/logout",
+        "http://localhost:5000/api/users/logout",
         {},
         { withCredentials: true }
       );

@@ -17,7 +17,7 @@ const StockValue = () => {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
+        const res = await axios.get("http://localhost:5000/api/stocks");
         setStockData(res.data);
       } catch (err) {
         console.error("Failed to fetch stock data:", err);

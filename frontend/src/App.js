@@ -27,6 +27,7 @@ import MakeOrder from "./components/DashboardPages/MakeOrder";
 import AllocateOrder from "./components/DashboardPages/AllocateOrder";
 import MyOrders from "./components/DashboardPages/MyOrders";
 import AdminActivity from "./components/DashboardPages/AdminActivity";
+import SupportCard from "./components/DashboardPages/SupportCard";
 
 function App() {
   const [userType, setUserType] = useState("guest");
@@ -36,7 +37,7 @@ function App() {
     const checkSession = async () => {
       const startTime = Date.now(); 
       try {
-        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
+        const res = await axios.get("http://localhost:5000/api/users/me", {
           withCredentials: true,
         });
         setUserType(res.data.userType);
@@ -90,6 +91,7 @@ function App() {
             <Route path="/user-requests" element={<AllocateOrder />} />
             <Route path="/stock/add" element={<AddStockPage />} />
             <Route path="/admin/users" element={<ManageUsersPage />} />
+            <Route path="/support" element={<SupportCard />} />
             <Route path="/charts/status" element={<StatusChartPage />} />
             <Route path="/admin-activity" element={<AdminActivity />} />
           </Routes>

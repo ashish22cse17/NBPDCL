@@ -19,7 +19,7 @@ const StockValueComplaints = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const res = await axios.get('https://nbpdcl-sms.onrender.com/api/complaints/all', {
+        const res = await axios.get('http://localhost:5000/api/complaints/all', {
           withCredentials: true,
         });
         setComplaints(res.data);
@@ -72,7 +72,7 @@ const StockValueComplaints = () => {
       if (proofFile) formData.append('proof', proofFile);
 
       await axios.put(
-        `https://nbpdcl-sms.onrender.com/api/complaints/${activeComplaint.complaintId}/resolve`,
+        `http://localhost:5000/api/complaints/${activeComplaint.complaintId}/resolve`,
         formData,
         { withCredentials: true, headers: { 'Content-Type': 'multipart/form-data' } }
       );
