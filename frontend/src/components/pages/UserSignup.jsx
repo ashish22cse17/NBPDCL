@@ -37,7 +37,7 @@ function UserSignup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/users/signup', formData);
+      const res = await axios.post('https://nbpdcl-sms.onrender.com/api/users/signup', formData);
       alert(res.data.message);
     } catch (err) {
       alert(err.response?.data?.message || 'Signup failed');

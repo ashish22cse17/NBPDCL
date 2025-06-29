@@ -12,7 +12,7 @@ const AllocateOrder = () => {
   useEffect(() => {
     const fetchPendingOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orders/pending");
+        const response = await axios.get("https://nbpdcl-sms.onrender.com/api/orders/pending");
         const ordersData = response.data;
         setOrders(ordersData);
 
@@ -61,7 +61,7 @@ const AllocateOrder = () => {
   const allocatedQty = allocations[orderId]?.[itemId] ?? 1;
 
   try {
-    const res = await axios.post("http://localhost:5000/api/orders/accept", {
+    const res = await axios.post("https://nbpdcl-sms.onrender.com/api/orders/accept", {
       orderId,
       itemId,
       quantity: allocatedQty,
@@ -90,7 +90,7 @@ const handleRejectItem = async (orderId, itemId) => {
   const key = `${orderId}-${itemId}`;
 
   try {
-    const res = await axios.post("http://localhost:5000/api/orders/reject", {
+    const res = await axios.post("https://nbpdcl-sms.onrender.com/api/orders/reject", {
       orderId,
       itemId,
     });

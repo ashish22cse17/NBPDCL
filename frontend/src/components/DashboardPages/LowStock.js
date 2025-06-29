@@ -15,7 +15,7 @@ const LowStock = () => {
   useEffect(() => {
     const fetchLowStockItems = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/stocks");
+        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/stocks");
         const lowItems = res.data.filter((item) => item.quantity < 25);
         setLowStockItems(lowItems);
       } catch (err) {

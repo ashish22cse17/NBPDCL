@@ -34,7 +34,7 @@ function LoginForm({ setUserType }) {
   e.preventDefault();
 
   try {
-    const res = await axios.post('http://localhost:5000/api/users/login', {
+    const res = await axios.post('https://nbpdcl-sms.onrender.com/api/users/login', {
       email: formData.email,
       password: formData.password,
       captchaInput: formData.captchaInput,
@@ -46,7 +46,7 @@ function LoginForm({ setUserType }) {
     alert(res.data.message);
 
     // Get updated user info after login to set userType properly
-    const me = await axios.get("http://localhost:5000/api/users/me", {
+    const me = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
       withCredentials: true,
     });
 

@@ -37,7 +37,7 @@ function App() {
     const checkSession = async () => {
       const startTime = Date.now(); 
       try {
-        const res = await axios.get("http://localhost:5000/api/users/me", {
+        const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
           withCredentials: true,
         });
         setUserType(res.data.userType);
