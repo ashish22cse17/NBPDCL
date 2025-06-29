@@ -16,17 +16,28 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/me', protect, async (req, res) => {
-  const { _id, fullName, email, status, role, centerId, designation } = req.user;
-  res.json({
-    _id, 
+  const user = req.user;
+
+  if (user.role === "admin" || user.userType === "admin") {
+    return res.json({
+      userType: "admin",
+      username: user.username || "Admin"
+    });
+  }
+
+  // Normal DB user
+  const { _id, fullName, email, status, role, centerId, designation } = user;
+  return res.json({
+    _id,
     fullName,
     email,
     status,
     centerId,
     designation,
-    userType: role
+    userType: role || "user"
   });
 });
+
 
 
 router.get('/', getAllUsers);

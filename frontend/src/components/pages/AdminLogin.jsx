@@ -32,33 +32,38 @@ function AdminLogin({ setUserType }) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (formData.captchaInput !== formData.captchaServer) {
-      alert("Invalid CAPTCHA");
-      return;
-    }
+  if (formData.captchaInput !== formData.captchaServer) {
+    alert("Invalid CAPTCHA");
+    return;
+  }
 
-    try {
-      const res = await axios.post(
-        "https://nbpdcl-sms.onrender.com/api/admin/adminLogin",
-        {
-          username: formData.username,
-          password: formData.password,
-        }
-      );
+  try {
+    const res = await axios.post(
+      "https://nbpdcl-sms.onrender.com/api/admin/adminLogin",
+      {
+        username: formData.username,
+        password: formData.password,
+        captchaInput: formData.captchaInput,
+        captchaServer: formData.captchaServer,
+      },
+      {
+        withCredentials: true,
+      }
+    );
 
-      alert(res.data.message);
-      setUserType('admin');
-      
-      setTimeout(() => {
-        navigate("/");
-      }, 100);
+    alert(res.data.message);
+    setUserType("admin");
 
-    } catch (err) {
-      alert(err.response?.data?.message || "Admin login failed");
-    }
-  };
+    setTimeout(() => {
+      navigate("/");
+    }, 100);
+  } catch (err) {
+    alert(err.response?.data?.message || "Admin login failed");
+  }
+};
+
 
   return (
     <section className="admin-login-section">

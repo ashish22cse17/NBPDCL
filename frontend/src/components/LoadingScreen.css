@@ -1,0 +1,95 @@
+/* src/components/LoadingScreen.css */
+
+.nbpdcl-loading {
+  background: radial-gradient(circle at center, #000, #001c33 90%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.electric-pulse {
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.bolt {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  background: linear-gradient(135deg, #00ffe0, #007eff);
+  clip-path: polygon(40% 0%, 60% 0%, 45% 45%, 70% 45%, 35% 100%, 50% 55%, 30% 55%);
+  animation: flash 1s infinite ease-in-out;
+  filter: drop-shadow(0 0 15px #00ffe0);
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite ease-in-out;
+  box-shadow: 0 0 25px #00ffe0, 0 0 60px #00bfff;
+}
+
+.company-name {
+  font-size: 42px;
+  font-weight: bold;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #0099ff;
+  margin-top: 20px;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #ccc;
+  font-style: italic;
+  letter-spacing: 1.2px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+  }
+  45% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}

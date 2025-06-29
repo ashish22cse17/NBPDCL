@@ -73,12 +73,12 @@ const getMyOrders = async (req, res) => {
       return res.status(404).json({ message: "User not found by email" });
     }
 
-    // Find orders by user._id
+   
     const orders = await Order.find({ userId: user._id })
       .populate("items.itemId", "itemName")
       .sort({ placedAt: -1 });
 
-    console.log(`📥 Orders for ${userEmail}:`, orders.length);
+    
     res.json(orders);
   } catch (err) {
     console.error("❌ Error fetching user orders:", err);

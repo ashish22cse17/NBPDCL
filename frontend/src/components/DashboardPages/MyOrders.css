@@ -1,39 +1,33 @@
 .my-orders-container {
-  padding: 20px;
+  padding: 2rem;
   font-family: "Segoe UI", sans-serif;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .my-orders-container h2 {
-  margin-bottom: 20px;
-  text-align: center;
-  color: #2d2d2d;
-}
-
-.responsive-table {
-  overflow-x: auto;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .orders-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .orders-table th,
 .orders-table td {
-  padding: 12px 16px;
+  padding: 12px 15px;
+  text-align: left;
   border-bottom: 1px solid #eee;
   vertical-align: top;
-  text-align: left;
 }
 
 .orders-table th {
-  background-color: #f4f7fa;
-  font-weight: 600;
-  color: #333;
+  background-color: #f7f7f7;
+  color: #444;
 }
 
 .item-cell {
@@ -43,58 +37,56 @@
 }
 
 .item-row {
-  padding: 8px;
-  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5faff;
+  padding: 10px;
   border-radius: 6px;
-  background-color: #f9f9f9;
+  border-left: 4px solid #007bff;
 }
 
-.item-id {
-  font-size: 12px;
-  color: #777;
+.item-info {
+  flex-grow: 1;
 }
 
 .item-name {
   font-weight: bold;
+  margin-bottom: 5px;
   color: #333;
 }
 
-.item-qty {
+.item-details span {
+  margin-right: 10px;
+  color: #555;
   font-size: 14px;
-  color: #444;
 }
 
-.status {
-  padding: 6px 12px;
-  border-radius: 5px;
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 20px;
   text-transform: capitalize;
-  font-weight: 500;
-  width: fit-content;
+  text-align: center;
 }
 
-.status.pending {
-  background-color: #fff3cd;
-  color: #856404;
-}
-
-.status.approved {
+.accepted {
   background-color: #d4edda;
   color: #155724;
 }
 
-.status.delivered {
-  background-color: #cce5ff;
-  color: #004085;
+.pending {
+  background-color: #fff3cd;
+  color: #856404;
 }
 
-@media (max-width: 768px) {
-  .orders-table th,
-  .orders-table td {
-    padding: 10px 12px;
-    font-size: 14px;
-  }
+.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
 
-  .item-row {
-    font-size: 13px;
-  }
+.responsive-table {
+  overflow-x: auto;
 }

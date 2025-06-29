@@ -8,14 +8,10 @@ const MyOrders = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      console.log("🔄 Fetching user orders...");
-
       try {
         const res = await axios.get("https://nbpdcl-sms.onrender.com/api/orders/my-orders", {
           withCredentials: true,
         });
-
-        console.log("✅ Orders fetched:", res.data);
 
         if (!Array.isArray(res.data)) {
           console.error("⚠️ Expected array, got:", res.data);
@@ -50,7 +46,7 @@ const MyOrders = () => {
                 <th>Date</th>
                 <th>Items</th>
                 <th>Total Quantity</th>
-                <th>Status</th>
+                <th>Order Status</th>
               </tr>
             </thead>
             <tbody>
@@ -71,11 +67,16 @@ const MyOrders = () => {
                         <div className="item-cell">
                           {order.items.map((i, idx) => (
                             <div key={idx} className="item-row">
-                              <div className="item-id">🆔 {i.itemId?._id || "N/A"}</div>
-                              <div className="item-name">
-                                {i.itemId?.itemName || "❓ Item not found"}
+                              <div className="item-info">
+                                <div className="item-name">{i.itemId?.itemName || "❓ Unknown"}</div>
+                                <div className="item-details">
+                                  <span>🆔 {i.itemId?._id || "N/A"}</span>
+                                  <span>Qty: {i.quantity}</span>
+                                </div>
                               </div>
-                              <div className="item-qty">Qty: {i.quantity}</div>
+                              <div className={`item-status badge ${i.status?.toLowerCase() || "pending"}`}>
+                                {i.status || "Pending"}
+                              </div>
                             </div>
                           ))}
                         </div>
@@ -84,8 +85,10 @@ const MyOrders = () => {
                       )}
                     </td>
                     <td>{totalQty}</td>
-                    <td className={`status ${order.status?.toLowerCase() || "pending"}`}>
-                      {order.status || "Pending"}
+                    <td>
+                      <span className={`badge ${order.status?.toLowerCase() || "pending"}`}>
+                        {order.status || "Pending"}
+                      </span>
                     </td>
                   </tr>
                 );

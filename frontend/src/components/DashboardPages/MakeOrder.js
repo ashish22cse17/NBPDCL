@@ -17,7 +17,7 @@ const MakeOrder = ({ userType }) => {
         const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
           withCredentials: true,
         });
-        console.log("👤 User Info:", res.data);
+       
         setUserDetails(res.data);
       } catch (err) {
         console.error("❌ Failed to fetch user info", err);
@@ -91,7 +91,7 @@ const MakeOrder = ({ userType }) => {
     };
 
     try {
-      console.log("📦 Order Payload:", JSON.stringify(payload, null, 2));
+     
       await axios.post("https://nbpdcl-sms.onrender.com/api/orders", payload, {
         withCredentials: true,
       });

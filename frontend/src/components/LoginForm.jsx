@@ -31,22 +31,33 @@ function LoginForm({ setUserType }) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('https://nbpdcl-sms.onrender.com/api/users/login', formData, {
-        withCredentials: true, 
-      });
-      alert(res.data.message);
-      setUserType(res.data.userType);
+  e.preventDefault();
 
-      setTimeout(() => {
-      navigate('/');
-      }, 1);
+  try {
+    const res = await axios.post('https://nbpdcl-sms.onrender.com/api/users/login', {
+      email: formData.email,
+      password: formData.password,
+      captchaInput: formData.captchaInput,
+      captchaServer: formData.captchaServer, // 🔥 this was missing
+    }, {
+      withCredentials: true,
+    });
 
-    } catch (err) {
-      alert(err.response?.data?.message || 'Login failed');
-    }
-  };
+    alert(res.data.message);
+
+    // Get updated user info after login to set userType properly
+    const me = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
+      withCredentials: true,
+    });
+
+    setUserType(me.data.userType); // 'user' or 'admin'
+
+    navigate('/');
+  } catch (err) {
+    alert(err.response?.data?.message || 'Login failed');
+  }
+};
+
 
   return (
     <div className="login-section">

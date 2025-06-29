@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
+// Layout components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LoadingScreen from "./components/LoadingScreen";
 
+// Auth pages
 import LoginForm from "./components/LoginForm";
 import AdminLogin from "./components/pages/AdminLogin";
 import UserSignup from "./components/pages/UserSignup";
 import Dashboard from "./components/pages/Dashboard";
 
+// Dashboard pages
 import Inventory from "./components/DashboardPages/Inventory";
 import LowStock from "./components/DashboardPages/LowStock";
 import StockValue from "./components/DashboardPages/StockValue";
@@ -22,13 +26,15 @@ import StatusChartPage from "./components/DashboardPages/StatusChartPage";
 import MakeOrder from "./components/DashboardPages/MakeOrder";
 import AllocateOrder from "./components/DashboardPages/AllocateOrder";
 import MyOrders from "./components/DashboardPages/MyOrders";
-import AdminActivity from "./components/DashboardPages/AdminActivity"
+import AdminActivity from "./components/DashboardPages/AdminActivity";
 
 function App() {
   const [userType, setUserType] = useState("guest");
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const checkSession = async () => {
+      const startTime = Date.now(); 
       try {
         const res = await axios.get("https://nbpdcl-sms.onrender.com/api/users/me", {
           withCredentials: true,
@@ -36,10 +42,20 @@ function App() {
         setUserType(res.data.userType);
       } catch {
         setUserType("guest");
+      } finally {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 2000 - elapsed); 
+        setTimeout(() => setLoading(false), delay);
       }
     };
+
     checkSession();
   }, []);
+
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="app-wrapper">
@@ -69,9 +85,7 @@ function App() {
             <Route path="/user-makeorder" element={<MakeOrder />} />
             <Route
               path="/user-orders"
-              element={
-                <MyOrders userType={userType}  />
-              }
+              element={<MyOrders userType={userType} />}
             />
             <Route path="/user-requests" element={<AllocateOrder />} />
             <Route path="/stock/add" element={<AddStockPage />} />
