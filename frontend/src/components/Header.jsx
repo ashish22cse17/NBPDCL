@@ -44,7 +44,7 @@ function Header({ userType, setUserType }) {
     <header className="header-wrapper">
       <div className="header-top">
         <div className="header-left">
-          <img src="SBLogo.jpg" alt="Company Logo" className="logo" />
+          <img src="logo.png" alt="Company Logo" className="logo" />
           <h1 className="header-title">
             <span>Stock</span>
             <span> Management </span>
@@ -52,7 +52,7 @@ function Header({ userType, setUserType }) {
           </h1>
         </div>
         <div className="header-right">
-          <img src="NBPDCL.png" alt="Partner Logo" className="logo" />
+          <img src="SBLogo.jpg" alt="Partner Logo" className="logo" />
         </div>
       </div>
 
