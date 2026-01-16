@@ -8,7 +8,7 @@ const LoadingScreen = () => {
       <div className="electric-pulse">
         <div className="bolt"></div>
         <div className="glow"></div>
-        <h1 className="company-name">NBPDCL</h1>
+        <h1 className="company-name">SBPDCL</h1>
         <p className="tagline">तमसो मा ज्योतिर्गमय...</p>
       </div>
     </div>
