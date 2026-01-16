@@ -44,7 +44,7 @@ function Header({ userType, setUserType }) {
     <header className="header-wrapper">
       <div className="header-top">
         <div className="header-left">
-          <img src="logo.png" alt="Company Logo" className="logo" />
+          <img src="SBLogo.jpg" alt="Company Logo" className="logo" />
           <h1 className="header-title">
             <span>Stock</span>
             <span> Management </span>
